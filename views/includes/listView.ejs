@@ -1,0 +1,37 @@
+<% if (todoList.length > 0) { %>
+<ul class="list-unstyled bg-info text-center w-50 mx-auto">
+  <% for(let todo of todoList) {%> <% if(todo.completed == false) { %>
+  <li>
+    <div class="alert bg-light">
+      <%= todo.text %>
+      <a
+        href="/delete-item/<%= todo.id %> "
+        class="close fa fa-trash mx-3"
+        style="color: red"
+      ></a>
+      <a
+        href="/completed-item/<%= todo.id %> "
+        class="close fa fa-check-square"
+        style="color: green"
+      ></a>
+    </div>
+  </li>
+  <% } else { %>
+  <li>
+    <div class="alert bg-success">
+      <del><%= todo.text %></del>
+      <a
+        href="/delete-item/<%= todo.id %> "
+        class="close fa fa-trash mx-3"
+        style="color: red"
+      ></a>
+    </div>
+  </li>
+  <% } %> <% } %>
+</ul>
+
+<% }else{ %>
+<div class="alert alert-warning w-50 mx-auto center" role="alert">
+  <h3 class="center">there is not any item in the to do list</h3>
+</div>
+<% } %>

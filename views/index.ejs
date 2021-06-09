@@ -1,0 +1,20 @@
+<%- include ("./includes/head.ejs") %> 
+    <div class="form-group">
+      <h1>TO DO JOBS</h1>
+      <%- include ("./includes/todoForm.ejs") %>
+      <div class="mx-auto w-50 mt-3 alert alert-primary row">
+        <p class="d-inline col">
+          finished jobs :
+          <span class="badge badge-success badge-pill"> <%= completed %> </span>
+        </p>
+        <p class="d-inline col">
+          not done jobs :
+          <span class="badge badge-warning badge-pill">
+            <%= notCompleted %>
+          </span>
+        </p>
+      </div>
+    </div>
+    <%- include ("./includes/listView.ejs") %>
+  </body>
+</html>
